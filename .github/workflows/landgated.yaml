@@ -1,0 +1,10 @@
+name: landgated
+on:
+  push:
+    branches: ["landg/**"]
+jobs:
+  landgated:
+    runs-on: ubuntu-latest
+    environment: held
+    steps:
+      - run: sleep 20

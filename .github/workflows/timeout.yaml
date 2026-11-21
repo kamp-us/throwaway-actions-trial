@@ -1,0 +1,16 @@
+name: timeout
+on: workflow_dispatch
+jobs:
+  job-limit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
+    steps:
+      - run: sleep 150
+      - run: echo after
+  step-limit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - run: sleep 150
+        timeout-minutes: 1
+      - run: echo after

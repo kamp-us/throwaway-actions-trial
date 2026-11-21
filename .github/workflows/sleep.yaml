@@ -1,0 +1,16 @@
+name: sleep
+on:
+  workflow_dispatch:
+    inputs:
+      group:
+        default: ""
+      seconds:
+        default: "300"
+concurrency:
+  group: sleep-${{ inputs.group || github.run_id }}
+  cancel-in-progress: true
+jobs:
+  sleep:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sleep ${{ inputs.seconds }}

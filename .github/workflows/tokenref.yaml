@@ -1,0 +1,15 @@
+name: tokenref
+on:
+  workflow_dispatch:
+    inputs:
+      sha:
+        required: true
+permissions:
+  contents: write
+jobs:
+  tokenref:
+    runs-on: ubuntu-latest
+    steps:
+      - run: gh api -X POST repos/${{ github.repository }}/git/refs -f ref=refs/heads/trial/github-token-${{ github.run_id }} -f sha=${{ inputs.sha }}
+        env:
+          GH_TOKEN: ${{ github.token }}

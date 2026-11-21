@@ -1,0 +1,7 @@
+name: anypush
+on: push
+jobs:
+  anypush:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "ref=${{ github.ref }} sha=${{ github.sha }}"

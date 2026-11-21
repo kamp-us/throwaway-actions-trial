@@ -1,0 +1,9 @@
+name: refbuild
+on:
+  push:
+    branches: ["trial/**"]
+jobs:
+  refbuild:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "event=${{ github.event_name }} sha=${{ github.sha }} ref=${{ github.ref }} actor=${{ github.actor }}"

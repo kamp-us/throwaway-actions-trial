@@ -1,0 +1,13 @@
+name: gate
+on:
+  workflow_dispatch:
+  push:
+    branches: ["gate/**"]
+concurrency:
+  group: gate
+jobs:
+  gated:
+    runs-on: ubuntu-latest
+    environment: held
+    steps:
+      - run: echo through the gate

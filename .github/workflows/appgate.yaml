@@ -1,0 +1,16 @@
+name: appgate
+on:
+  workflow_dispatch:
+  push:
+    branches: ["appgate/**"]
+  pull_request:
+    branches: ["main"]
+    paths: ["appgate.txt"]
+concurrency:
+  group: appgate
+jobs:
+  gated:
+    runs-on: ubuntu-latest
+    environment: held-app
+    steps:
+      - run: echo through the app gate

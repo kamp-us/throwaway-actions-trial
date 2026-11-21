@@ -1,0 +1,9 @@
+name: steplimit
+on: workflow_dispatch
+jobs:
+  step-limit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - run: sleep 150
+        timeout-minutes: 1

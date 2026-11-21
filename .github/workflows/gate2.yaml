@@ -1,0 +1,10 @@
+name: gate2
+on: workflow_dispatch
+jobs:
+  gated:
+    runs-on: ubuntu-latest
+    environment: held
+    concurrency:
+      group: gate2-job
+    steps:
+      - run: echo through

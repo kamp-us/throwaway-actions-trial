@@ -1,0 +1,9 @@
+name: longpush
+on:
+  push:
+    branches: ["long/**"]
+jobs:
+  longpush:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sleep 300
